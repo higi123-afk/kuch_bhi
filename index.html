@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Vivi!</title>
+  <style>
+    body {
+      font-family: 'Dancing Script', cursive;
+      background: #ffe6f0;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background-color: #ff66b2;
+      color: white;
+      padding: 2rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: 3rem;
+    }
+    .gallery-heading {
+      font-size: 2rem;
+      margin-top: 2rem;
+      color: #cc0066;
+    }
+    .gallery-wrapper {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+      -webkit-mask: linear-gradient(90deg, transparent, white 10%, white 90%, transparent);
+    }
+    .gallery {
+      display: flex;
+      padding: 1rem;
+      animation: autoSlide 20s linear infinite;
+      width: calc(200px * 22 + 1rem * 22); /* Double the images for seamless loop */
+    }
+    .gallery img {
+      width: 200px;
+      height: 200px;
+      margin: 0.5rem;
+      border-radius: 10px;
+      object-fit: cover;
+      flex-shrink: 0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .gallery img.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @keyframes autoSlide {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-200px * 11 - 0.5rem * 11)); }
+    }
+    .gallery:hover {
+      animation-play-state: paused;
+    }
+    .messages {
+      padding: 2rem;
+    }
+    .message {
+      background: white;
+      margin: 1rem auto;
+      padding: 1rem;
+      width: 60%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .friend {
+      font-weight: bold;
+      color: #ff3399;
+    }
+    .secret-button {
+      margin-top: 3rem;
+      padding: 1rem 2rem;
+      background-color: #222;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: box-shadow 0.3s ease;
+      display: none;
+    }
+    .secret-button:hover {
+      box-shadow: 0 0 20px 5px #ff66cc;
+    }
+    #secret-content {
+      display: none;
+      background: #fff0f5;
+      margin: 2rem auto;
+      padding: 1rem;
+      width: 60%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    #secret-content h3 {
+      color: #cc0066;
+    }
+    #secret-content ul {
+      text-align: left;
+    }
+    #riddle-section {
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    input[type="text"] {
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+    }
+    button#submit-answer {
+      margin-left: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #ff66b2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: inherit;
+    }
+  </style>
+  <audio id="birthday-audio" autoplay loop>
+    <source src="happy-birthday.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</head>
+<body>
+  <header>
+    <h1>Happy Birthday Vivi! 🎉</h1>
+  </header>
+
+  <h2 class="gallery-heading">Memories of us together</h2>
+  <div class="gallery-wrapper">
+    <section class="gallery" id="gallery">
+      <!-- Original images -->
+      <img src="1.jpg" alt="Vivi 1" />
+      <img src="2.jpg" alt="Vivi 2" />
+      <img src="3.jpg" alt="Vivi 3" />
+      <img src="11.jpg" alt="Vivi 4" />
+      <img src="5.jpg" alt="Vivi 5" />
+      <img src="6.jpg" alt="Vivi 6" />
+      <img src="7.jpg" alt="Vivi 7" />
+      <img src="8.jpg" alt="Vivi 8" />
+      <img src="9.jpg" alt="Vivi 9" />
+      <img src="10.jpg" alt="Vivi 10" />
+      <img src="12.jpg" alt="Vivi 12" />
+      <img src="13.jpg" alt="Vivi 13" />
+      <img src="14.jpg" alt="Vivi 14" />
+      <img src="15.jpg" alt="Vivi 15" />
+      <img src="16.jpg" alt="Vivi 16" />
+      <img src="17.jpg" alt="Vivi 17" />
+      <!-- Duplicate images for seamless loop -->
+      <img src="1.jpg" alt="Vivi 1" />
+      <img src="2.jpg" alt="Vivi 2" />
+      <img src="3.jpg" alt="Vivi 3" />
+      <img src="11.jpg" alt="Vivi 4" />
+      <img src="5.jpg" alt="Vivi 5" />
+      <img src="6.jpg" alt="Vivi 6" />
+      <img src="7.jpg" alt="Vivi 7" />
+      <img src="8.jpg" alt="Vivi 8" />
+      <img src="9.jpg" alt="Vivi 9" />
+      <img src="10.jpg" alt="Vivi 10" />
+       <img src="12.jpg" alt="Vivi 12" />
+      <img src="13.jpg" alt="Vivi 13" />
+      <img src="14.jpg" alt="Vivi 14" />
+      <img src="15.jpg" alt="Vivi 15" />
+      <img src="16.jpg" alt="Vivi 16" />
+      <img src="17.jpg" alt="Vivi 17" />
+    </section>
+  </div>
+
+  <section class="messages">
+    <h2>Messages from Friends</h2>
+    <div class="message">
+      <p class="friend">Adarsh:</p>
+      <p>Happy Birthday Bobo! I hope you have a great day today and enjoy the most.Yaar agar tu odisha pe hota toh tujhe hum sab mil k kitna mast surprise dete yaar.
+        Koi  na mujhe settle hone deh phir karenge yeh sab even tho it will be not your bday.</p>
+    </div>
+    <div class="message">
+      <p class="friend">Trent:</p>
+      <p>Happy birthday, beautiful soul. Here's to you and to everything your amazing future holds! 
+        <p>May your destiny brings you as much happiness and joy as you have given to others. 
+        You deserve all the magic the world can offer. Never forget how special you are — not just today, but every single day. </p>
+        You bring so much light, laughter and warmth wherever you go. 
+        You have an amazing way of making everyone happy around you. But today, I hope you feel just how loved and special you are.</p>
+        
+            <img src="Trent.jpeg" alt="Ava and Vivi" style="width: 430px; height: 390px; border-radius: 20px; margin-top: 1rem; object-fit: cover;"/>
+        
+        
+    </div>
+    <div class="message">
+      <p class="friend">Smruti(papi):</p>
+      <p>Many happy returns of the day, wish you a day filled with lot of hapiness snd joy.
+        Have a wonderful, healthy and prosperous year ahead,Happy Birthday Vivi(party face emoji)</p>
+    </div>
+    <div class="message">
+      <p class="friend">Simar:</p>
+      <p>Happy Birthday, Vishakha! 🎉
+
+Who would've thought that one random game of Valorant back in 2021 would turn into years of amazing friendship, clutch moments, and endless laughs? I'm so grateful that the game gave me the best teammate (and friend) anyone could ask for.
+<p>Here's to more all-nighters, wild plays, and many more birthdays together—even if you still steal my mains sometimes! Hope your day is as wonderful and fun as you are. GG, and cheers to leveling up in life and the game! 💖✨</p></p>
+    </div>
+    <div class="message">
+      <p class="friend">Pratik:</p>
+      <p></p>
+    </div>
+    <div class="message">
+      <p class="friend">Durga:</p>
+      <p>Happy Birthday! 🎉 
+May your life be rang-biranga.
+Full of khushi and mastiyaan. 
+Janmdin mubarak ho! 🥳</p>
+    </div>
+    <div class="message">
+      <p class="friend">Pratham:</p>
+      <p>happyyyy birthday vivivi D D 🥳 best teammate best ytuber best valo player</p>
+    </div>
+    <div class="message">
+      <p class="friend">Jaydeep:</p>
+      <p>Happy Birthday!!</p>
+    </div>
+  </section>
+
+  <section id="riddle-section">
+    <p>Solve this to unlock your secret surprise:</p>
+    <p><strong>What has hands but can't clap?</strong></p>
+    <input type="text" id="riddle-answer" placeholder="Your answer here..." />
+    <button id="submit-answer" onclick="checkAnswer()">Submit</button>
+    <p id="feedback" style="color: green;"></p>
+  </section>
+
+  <button class="secret-button" id="secret-btn" onclick="toggleSecret()">Secret Surprise 🎁</button>
+
+  <div id="secret-content">
+    <h3 style="font-family: 'Pacifico', cursive">Things I Experienced with You for the First Time</h3>
+    <ul style="font-family: 'Pacifico', cursive">
+      <li >Our first road trip adventure as in not bike rides haha
+        <p>->Uff this is a topic I can go on talking and talking as you know so many things happened with us while travelling haha. Bobo you remember that one ride to puri in which you did ulti on the road and also we got into an accident and also we got the best view seat in the beach like so many things were happening that day. This day comes to my mind when i think of any road trip with you.</p>
+      </li>
+      <li>Late night talks
+        <p>->I didnt do this with you for the first time like before also i have talked late night with my friends but with you when i did first time it was good like i remember we talked the whole night and when i will be going to sleep there will be sun out. When i talk with you time just flies like we will be talking about some random things out of nowehere and it there goes the time like crazy.At that time i didnt had job so it must have been so difficult to go office after spending the whole night with me now i can understand. But anyway I enjoy talking with you the most.♥</p>
+      </li>
+      <li>Trying Ramen for the first time
+        <p>->I tried Ramen also for the first time with you can you believe that? haha thinking about it also making me lauugh like what even i am writing ,,like is it even a thing to say? But yea bobo we went to that Japanese Ramen place when you came to Odisha and it was sooo yummyyyy like i can feel the ttaste while writing about it. and also bobo when i went to banglore i tried korean ramen with you also haha it was also super tastyyy bobo.Thank you for making me eat such amazing things in my life cutie</p>
+      </li>
+      <li>Watching a sunset together 🌄
+        <p>->Bobo we went to that Jhumka Dam and we went with so many snacks with us and we just ate there and watched the sunset it was a good day so i just remember that watching sunset with you for the first time was on that day itself. </p>
+      </li>
+      <li>Cooking together
+        <p>->This reminds me when I came to HYD to your apartment in those days itself we cooked together, cooked as in food not something else...i remember you made me eat PASTA ALOODUM and that amazing daal which was so tasty and also i never had and also i made fried rice for you which you said you liked but i dont know why it was not that tasty as i remember but anyway you happy so me happy but this cooking with you is also good but sometimes you annoy me while cooking you are like go do that dont do that dont use my expensive tissues still i would love to cook together with you in future.</p>
+    </li>
+      <li>Dreaming big and planning our futures
+        <p>->Like this is a thing i like to talk with you about bcz it makes me happy thinking about all the possibilities of us together like it feels so good like thinking about huh life can be like that woww it would be so great if this happens and if that happens so its kinf of feels good to talk about future with you like you know talking about having a house and having a cute little baby being a family wowww think about it bobo doesnt it feel good to think like that? It sure does for me.</p>
+      </li>
+      <li>Dancing Together for the First time with you
+        <p>->You remember that time when you are in the hotel you started dancing when I came in the room and with the flow I also started dancing like you made me dance tho... like you decorated the room it was a Vibe and that was the second time I think I danced before that I danced in some barati when i was a kid and after that I never danced again but with you on that day to all so I don't know how like it's kind of mixed feeling it felt good and after dancing i felt like why I danced like I must have been looking so dumb while dancing</p>
+    </li>
+    <li>Making a playlist just for you
+        <p>->Okay let me tell you i am so selfish i dont think about anyone like you say everytime but for the first time ever when your coldplay trip was planned i was so excited that i made a playlist only and only for you it felt good doing that i was thinking that you will be so in love with me after you will listen to these songs and remember me ki ohhh my bobo is so op he made me lissten all this songs now i can vibe here hoho i may sound stupid bobo but it was first time i ever made a playlist for someone and it felt so good bobo cant explain in detail.</p>
+    </li>
+    <li>Binge Watching with you
+        <p>->I can say yes you have taught me this as well the idea of binge watching and it is actually fun to watch together something with you and you remember how the cycle of "just one more" goes on with us haha i just find it more fun watching together if we like the show equally but if we dont like then we just watch alone like me watching GOT and you watching your korean drama these days but still i hope we will find some series which we both will like and will continue to watch together.</p>
+    </li>
+    <li>The first time I wanted to freeze a moment forever
+        <p>->You must be thinking heinnnn when this kind of things happened between us that you would want to freeze it for ever but yeaa bobo but let me tell you it have happened so many times bobo....like many times i have felt like wow this moment is so op and amazing remember once we went to that botanical garden and i took your pic also there which you kept as DP also but moment when i was looking at you i was like how can someone be so cute like i would just love to freeze the time and watch you like this forever it was that kind of moment. Another time also it happened when we were at a restaurant and food was yet to come you just looked at me like in some way....maybe it was like you were thinking this bhukkad is also so bhuka but it felt so magical i thought that time also to freeze everything.</p>
+    </li>
+    <li>Being first or last doesnt matter bobo being with you and creating  good memories together is all that matters bobo and enjoy my life with you to the 9999999% more and i like it with you.
+    </li>
+    </ul>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const images = document.querySelectorAll('.gallery img');
+      images.forEach((img, index) => {
+        setTimeout(() => {
+          img.classList.add('visible');
+        }, index * 100);
+      });
+    });
+
+    function toggleSecret() {
+      const secret = document.getElementById('secret-content');
+      secret.style.display = (secret.style.display === 'none' || secret.style.display === '') ? 'block' : 'none';
+    }
+
+    function checkAnswer() {
+      const answer = document.getElementById('riddle-answer').value.trim().toLowerCase();
+      const feedback = document.getElementById('feedback');
+      if (answer === 'clock') {
+        document.getElementById('secret-btn').style.display = 'inline-block';
+        feedback.textContent = 'Correct! Your secret surprise is unlocked!';
+      } else {
+        feedback.textContent = 'Oops! Try again.';
+      }
+    }
+  </script>
+</body>
+</html>
